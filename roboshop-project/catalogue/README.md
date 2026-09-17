@@ -4,4 +4,4 @@ docker run -d --name catalogue --network roboshop catalogue:v1
 docker exec -it catalogue bash
 
 # health check
-- *http://localhost:8080/health*
+- *curl http://localhost:8080/health*
