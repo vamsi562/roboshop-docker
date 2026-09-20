@@ -1,11 +1,11 @@
-FROM python:3.9-alpine AS builder
+FROM python:3.9-slim AS builder
 WORKDIR /opt/server/
 COPY payment.ini .
 COPY *.py .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
-FROM python:3.9-alpine
+FROM python:3.9-slim
 EXPOSE 8080
 WORKDIR /opt/server
 COPY --from=builder --chown=roboshop:roboshop /opt/server/ /opt/server/
