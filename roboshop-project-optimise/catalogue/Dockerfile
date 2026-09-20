@@ -9,7 +9,7 @@ FROM node:20-alpine3.22
 WORKDIR /opt/server
 EXPOSE 8080
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
-COPY --from=buider --chown=roboshop:roboshop /opt/server/ /opt/server/
+COPY --from=builder --chown=roboshop:roboshop /opt/server/ /opt/server/
 LABEL project="roboshop" \
     maintainer="vamsi" \
     component="catalogue"
