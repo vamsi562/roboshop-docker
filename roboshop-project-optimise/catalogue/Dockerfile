@@ -14,7 +14,7 @@ LABEL project="roboshop" \
     maintainer="vamsi" \
     component="catalogue"
 ENV MONGO=true \
-    MONGO_URL="mongodb://mongo:27017/catalogue"
+    MONGO_URL="mongodb://mongodb:27017/catalogue"
 USER roboshop
 CMD [ "server.js" ]
 ENTRYPOINT [ "node" ]
