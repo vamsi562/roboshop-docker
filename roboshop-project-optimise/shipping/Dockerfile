@@ -9,6 +9,8 @@ WORKDIR /opt/server
 EXPOSE 8080
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 COPY --from=builder --chown=roboshop:roboshop /opt/server/ /opt/server/
+RUN mvn clean package
+RUN mv target/shipping-1.0.jar shipping.jar
 LABEL project="roboshop" \
     maintainer="vamsi" \
     component="shipping"
